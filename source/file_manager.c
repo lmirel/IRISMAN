@@ -1280,7 +1280,7 @@ void draw_file_manager()
             {
                 sys_game_get_temperature(0, &temp);
                 sys_game_get_temperature(1, &temp2);
-                sprintf(temp_disp, "Temp CPU: %iºC RSX: %iºC", temp, temp2);
+                sprintf(temp_disp, "Temp CPU: %iï¿½C RSX: %iï¿½C", temp, temp2);
             }
 
             set_ttf_window(848 - 220, 512 - 30, 300, 32, WIN_AUTO_LF);
@@ -1293,6 +1293,12 @@ void draw_file_manager()
 
 int file_manager(char *pathw1, char *pathw2)
 {
+    if (1)
+    {
+        extern s32 fmapp_run();
+        fmapp_run();
+        return REFRESH_GAME_LIST;
+    }
     static int auto_up = 0, auto_down = 0;
 
     update_devices1 = update_devices2 = false;
